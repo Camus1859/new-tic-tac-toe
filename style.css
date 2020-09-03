@@ -20,7 +20,7 @@ body{
   grid-template-rows: repeat(3,1fr);
   grid-template-columns: repeat(3, 1fr);
   background-color: rgb(34, 167, 172);
-  margin: 1rem 30rem 30rem;
+  margin: 1rem 30rem 0rem 30rem;
   padding: 5rem 2rem 1rem 2rem;
   font-family: 'Bungee Shade', cursive;
   box-shadow: 5px 10px 18px rgb(236, 233, 233);
@@ -45,11 +45,14 @@ body{
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 2rem;
-  color: black;
-  text-shadow: 5px 10px 18px rgb(160, 158, 158);
+  font-size: 2.5rem;
+  color: rgb(0, 19, 19);
+  text-shadow: 5px 10px 18px rgb(22, 22, 22);
   margin-left: 40rem;
   margin-right: 40rem;
+  font-family: 'Damion', cursive;
+
+
 
 
 }
