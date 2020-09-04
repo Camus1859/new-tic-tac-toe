@@ -42,6 +42,7 @@ export const game_flow = (() => {
 
      else if (gameBoardArray[1] !== "" && gameBoardArray[1] === gameBoardArray[4] && gameBoardArray[4] === gameBoardArray[7]){
       ui.disableClick()
+
      }
 
 

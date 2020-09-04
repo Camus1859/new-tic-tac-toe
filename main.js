@@ -3,3 +3,4 @@ import {ui} from '/UI.js'
 import {game_flow} from '/GameFlow.js'
 import {game_board} from '/GameBoard.js'
 ui.boardClick()
+ui.resetGame()

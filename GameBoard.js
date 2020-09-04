@@ -1,6 +1,6 @@
 export const game_board = (() => {
 
-  const theBoard = ["","","","","","","","","" ]
+  let theBoard = ["","","","","","","","","" ]
 
   const matchArrayToBoard = (number, value) => {
      theBoard[number] = value

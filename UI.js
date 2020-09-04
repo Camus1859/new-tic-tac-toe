@@ -5,7 +5,6 @@ export const ui = (() => {
 
   const cells = document.querySelectorAll('.cell')
 
-
   const boardClick = () => {
     cells.forEach(cell => cell.addEventListener('click', displayXorO))
   }
@@ -23,6 +22,17 @@ export const ui = (() => {
   return cells.forEach(cell => cell.style.pointerEvents = "none")
   }
 
-  return {boardClick, displayXorO, disableClick}
+  const resetGame = () => {
+    const resetBtn = document.getElementById('reset-btn')
+    resetBtn.addEventListener('click', resetGameClicked)
+  }
+
+  const resetGameClicked = () => {
+    cells.forEach(cell => cell.textContent = "")
+    game_board.theBoard = ["","","","","","","","","" ]
+    
+  }
+
+  return {boardClick, displayXorO, disableClick, resetGame}
 
 })();
