@@ -11,17 +11,29 @@
 </head>
 <body>
   <h1 id="title">Tic Tac Toe</h1>
+
+<div id="score-boxes">
+  <div class="score" id="score-box1">Player 1 Score
+    <div class="num">0</div>
+  </div>
+
+  <div class="score" id="score-box2">Player 2 Score
+    <div class="num">0</div>
+  </div>
+</div>
+
+
   <div id="board">
     <h3 id="player-turn">Player ___ turn</h3>
-    <div class="grid-item left-side top">X</div>
-    <div class="grid-item  top">O</div>
-    <div class="grid-item right-side top">X</div>
-    <div class="grid-item left-side">O</div>
-    <div class="grid-item ">O</div>
-    <div class="grid-item right-side">X</div>
-    <div class="grid-item bottom left-side">O</div>
-    <div class="grid-item bottom">X</div>
-    <div class="grid-item bottom right-side">X</div>
+    <div class="cell left-side top"></div>
+    <div class="cell  top"></div>
+    <div class="cell right-side top"></div>
+    <div class="cell left-side"></div>
+    <div class="cell "></div>
+    <div class="cell right-side"></div>
+    <div class="cell bottom left-side"></div>
+    <div class="cell bottom"></div>
+    <div class="cell bottom right-side"></div>
   </div>
   
   <script type="module" src="main.js"></script>
