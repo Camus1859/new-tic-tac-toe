@@ -11,6 +11,7 @@ export const ui = (() => {
    const displayXorO = (e) => {
      currentPlayer === player2 ? currentPlayer = player1 : currentPlayer = player2
      e.target.textContent = currentPlayer.letter
+     e.target !== ""? e.target.removeEventListener('click', displayXorO) : e.target
     }
 
   return {boardClick, displayXorO}
