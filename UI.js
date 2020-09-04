@@ -3,9 +3,11 @@ import {game_board} from  "/GameBoard.js"
 
 export const ui = (() => {
 
+  const cells = document.querySelectorAll('.cell')
+
+
   const boardClick = () => {
-    const cell = document.querySelectorAll('.cell')
-    cell.forEach(square => square.addEventListener('click', displayXorO))
+    cells.forEach(cell => cell.addEventListener('click', displayXorO))
   }
 
   const displayXorO = (e) => {
@@ -17,6 +19,10 @@ export const ui = (() => {
     game_flow.getWinnerOfGame()
   }
 
-  return {boardClick, displayXorO}
+  const disableClick = () => {
+  return cells.forEach(cell => cell.style.pointerEvents = "none")
+  }
+
+  return {boardClick, displayXorO, disableClick}
 
 })();
