@@ -1,5 +1,5 @@
-import {game_flow} from "./GameFlow.js";
-import {game_board} from "./GameBoard.js"
+import {game_flow} from "/GameFlow.js";
+import {game_board} from  "/GameBoard.js"
 
 export const ui = (() => {
 
@@ -14,6 +14,7 @@ export const ui = (() => {
     const valueOnSquare = e.target.textContent
     game_board.matchArrayToBoard(dataNumberClicked, valueOnSquare)
     e.target !== ""? e.target.removeEventListener('click', displayXorO) : e.target
+    game_flow.getWinnerOfGame()
   }
 
   return {boardClick, displayXorO}

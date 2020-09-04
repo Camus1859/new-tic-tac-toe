@@ -9,5 +9,4 @@ export const game_board = (() => {
 
   return{theBoard, matchArrayToBoard}
 
-
 })();
