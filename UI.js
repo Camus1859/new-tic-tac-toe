@@ -9,14 +9,16 @@ export const ui = (() => {
     cells.forEach(cell => cell.addEventListener('click', displayXorO))
   }
 
-  const displayXorO = (e) => {
-    e.target.textContent = game_flow.alternateXandO().letter
-    const dataNumberClicked = e.target.getAttribute('data-number')
-    const valueOnSquare = e.target.textContent
-    game_board.matchArrayToBoard(dataNumberClicked, valueOnSquare)
-    e.target !== ""? e.target.removeEventListener('click', displayXorO) : e.target
-    game_flow.getWinnerOfGame()
-  }
+  const displayXorO = () => {
+    cells.forEach(cell => cell.addEventListener('click', (e) =>{
+      cell.textContent !== "" ? cell.style.pointerEvents ="none" : 
+      e.target.textContent = game_flow.alternateXandO().letter
+      const dataNumberClicked = e.target.getAttribute('data-number')
+      const valueOnSquare = e.target.textContent
+      game_board.matchArrayToBoard(dataNumberClicked, valueOnSquare)
+      game_flow.getWinnerOfGame()
+   }))
+ }
 
   const disableClick = () => {
   return cells.forEach(cell => cell.style.pointerEvents = "none")
@@ -28,9 +30,9 @@ export const ui = (() => {
   }
 
   const resetGameClicked = () => {
+    let gameboard = game_board.theBoard
     cells.forEach(cell => cell.textContent = "")
-    game_board.theBoard = ["","","","","","","","","" ]
-    
+    game_board.gameBoardCleared()
   }
 
   return {boardClick, displayXorO, disableClick, resetGame}

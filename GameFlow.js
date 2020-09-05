@@ -45,16 +45,6 @@ export const game_flow = (() => {
 
      }
 
-
-
-
-
-
-
-
-
-
-
    }
 
    const getWinnerOfGame = () => {
