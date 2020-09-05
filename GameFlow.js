@@ -14,6 +14,9 @@ export const game_flow = (() => {
      const gameBoardArray = game_board.theBoard
      if (gameBoardArray[0] !== "" && gameBoardArray[0] === gameBoardArray[1] && gameBoardArray[1] === gameBoardArray[2]){
        ui.disableClick()
+
+       console.log('winner hit')
+
      }
 
      else if (gameBoardArray[0] !== "" && gameBoardArray[0] === gameBoardArray[3] && gameBoardArray[3] === gameBoardArray[6]){
@@ -44,7 +47,6 @@ export const game_flow = (() => {
       ui.disableClick()
 
      }
-
    }
 
    const getWinnerOfGame = () => {

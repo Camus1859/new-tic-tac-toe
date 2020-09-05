@@ -18,10 +18,15 @@ export const ui = (() => {
       game_board.matchArrayToBoard(dataNumberClicked, valueOnSquare)
       game_flow.getWinnerOfGame()
    }))
+
  }
 
   const disableClick = () => {
   return cells.forEach(cell => cell.style.pointerEvents = "none")
+  }
+
+  const allowClicking = () => {
+  return cells.forEach(cell => cell.style.pointerEvents = "auto")
   }
 
   const resetGame = () => {
@@ -30,11 +35,21 @@ export const ui = (() => {
   }
 
   const resetGameClicked = () => {
-    let gameboard = game_board.theBoard
     cells.forEach(cell => cell.textContent = "")
     game_board.gameBoardCleared()
   }
 
-  return {boardClick, displayXorO, disableClick, resetGame}
+  const playAgainBtn = () => {
+    const playBtn = document.getElementById('play-again-btn')
+    playBtn.addEventListener('click', playGame)
+  }
+
+  const playGame = () => {
+      resetGameClicked()
+      allowClicking()
+
+  }
+
+  return {boardClick, displayXorO, disableClick, resetGame, playAgainBtn}
 
 })();

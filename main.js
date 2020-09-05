@@ -4,3 +4,4 @@ import {game_flow} from '/GameFlow.js'
 import {game_board} from '/GameBoard.js'
 ui.resetGame()
 ui.displayXorO()
+ui.playAgainBtn()
