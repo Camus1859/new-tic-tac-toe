@@ -18,7 +18,6 @@ export const ui = (() => {
       game_board.matchArrayToBoard(dataNumberClicked, valueOnSquare)
       game_flow.getWinnerOfGame()
    }))
-
  }
 
   const disableClick = () => {
@@ -47,6 +46,8 @@ export const ui = (() => {
   const playGame = () => {
       resetGameClicked()
       allowClicking()
+      
+
 
 
   }

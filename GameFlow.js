@@ -11,11 +11,17 @@ export const game_flow = (() => {
    }
 
 
+
    const winnerOfGame = () => {
     let gameBoardArray = game_board.getBoard()
-
      if (gameBoardArray[0] !== "" && gameBoardArray[0] === gameBoardArray[1] && gameBoardArray[1] === gameBoardArray[2]){
        ui.disableClick()
+       currentPlayer = alternateXandO()
+      
+   
+
+
+
      }
 
      else if (gameBoardArray[0] !== "" && gameBoardArray[0] === gameBoardArray[3] && gameBoardArray[3] === gameBoardArray[6]){
@@ -46,6 +52,7 @@ export const game_flow = (() => {
       ui.disableClick()
 
      }
+
    }
 
    const getWinnerOfGame = () => {
