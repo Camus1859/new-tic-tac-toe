@@ -10,13 +10,12 @@ export const game_flow = (() => {
     return currentPlayer === player2 ? currentPlayer = player1 : currentPlayer = player2
    }
 
+
    const winnerOfGame = () => {
-     const gameBoardArray = game_board.theBoard
+    let gameBoardArray = game_board.getBoard()
+
      if (gameBoardArray[0] !== "" && gameBoardArray[0] === gameBoardArray[1] && gameBoardArray[1] === gameBoardArray[2]){
        ui.disableClick()
-
-       console.log('winner hit')
-
      }
 
      else if (gameBoardArray[0] !== "" && gameBoardArray[0] === gameBoardArray[3] && gameBoardArray[3] === gameBoardArray[6]){

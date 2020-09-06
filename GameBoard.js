@@ -13,6 +13,12 @@ export const game_board = (() => {
      console.log(theBoard)
   }
 
-  return{theBoard, matchArrayToBoard, gameBoardCleared}
+  const getBoard = () => {
+    return theBoard
+  }
+
+
+
+  return{theBoard, matchArrayToBoard, gameBoardCleared, getBoard}
 
 })();

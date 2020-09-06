@@ -48,8 +48,9 @@ export const ui = (() => {
       resetGameClicked()
       allowClicking()
 
+
   }
 
-  return {boardClick, displayXorO, disableClick, resetGame, playAgainBtn}
+  return {boardClick, displayXorO, disableClick, resetGame, playAgainBtn, resetGameClicked}
 
 })();
