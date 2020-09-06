@@ -16,6 +16,8 @@ export const ui = (() => {
       const dataNumberClicked = e.target.getAttribute('data-number')
       const valueOnSquare = e.target.textContent
       game_board.matchArrayToBoard(dataNumberClicked, valueOnSquare)
+      document.getElementById('reset-btn').style.pointerEvents = "auto"
+      ui.disablePlayAgainBtn()
       game_flow.getWinnerOfGame()
    }))
  }
@@ -43,15 +45,24 @@ export const ui = (() => {
     playBtn.addEventListener('click', playGame)
   }
 
+  const disableReset = () => {
+    return document.getElementById('reset-btn').style.pointerEvents = "none"
+  }
+
+  const disablePlayAgainBtn = () => {
+   return document.getElementById('play-again-btn').style.pointerEvents = "none"
+  }
+
+
   const playGame = () => {
       resetGameClicked()
       allowClicking()
-      
+
 
 
 
   }
 
-  return {boardClick, displayXorO, disableClick, resetGame, playAgainBtn, resetGameClicked}
+  return {boardClick, displayXorO, disableClick, resetGame, playAgainBtn, resetGameClicked, disableReset, disablePlayAgainBtn}
 
 })();

@@ -17,40 +17,62 @@ export const game_flow = (() => {
      if (gameBoardArray[0] !== "" && gameBoardArray[0] === gameBoardArray[1] && gameBoardArray[1] === gameBoardArray[2]){
        ui.disableClick()
        currentPlayer = alternateXandO()
-      
-   
-
-
-
+       ui.disableReset()
+       document.getElementById('play-again-btn').style.pointerEvents = "auto"
      }
 
      else if (gameBoardArray[0] !== "" && gameBoardArray[0] === gameBoardArray[3] && gameBoardArray[3] === gameBoardArray[6]){
       ui.disableClick()
+      currentPlayer = alternateXandO()
+      ui.disableReset()
+      document.getElementById('play-again-btn').style.pointerEvents = "auto"
      }
 
      else if (gameBoardArray[6] !== "" && gameBoardArray[6] === gameBoardArray[7] && gameBoardArray[7] === gameBoardArray[8]){
       ui.disableClick()
+      currentPlayer = alternateXandO()
+      ui.disableReset()
+      document.getElementById('play-again-btn').style.pointerEvents = "auto"
+
      }
 
      else if (gameBoardArray[2] !== "" && gameBoardArray[2] === gameBoardArray[5] && gameBoardArray[5] === gameBoardArray[8]){
       ui.disableClick()
+      currentPlayer = alternateXandO()
+      ui.disableReset()
+      document.getElementById('play-again-btn').style.pointerEvents = "auto"
+
      }
 
      else if (gameBoardArray[0] !== "" && gameBoardArray[0] === gameBoardArray[4] && gameBoardArray[4] === gameBoardArray[8]){
       ui.disableClick()
+      currentPlayer = alternateXandO()
+      ui.disableReset()
+      document.getElementById('play-again-btn').style.pointerEvents = "auto"
+
      }
 
      else if (gameBoardArray[2] !== "" && gameBoardArray[2] === gameBoardArray[4] && gameBoardArray[4] === gameBoardArray[6]){
       ui.disableClick()
+      currentPlayer = alternateXandO()
+      ui.disableReset()
+      document.getElementById('play-again-btn').style.pointerEvents = "auto"
+
      }
 
      else if (gameBoardArray[3] !== "" && gameBoardArray[3] === gameBoardArray[4] && gameBoardArray[4] === gameBoardArray[5]){
       ui.disableClick()
+      currentPlayer = alternateXandO()
+      ui.disableReset()
+      document.getElementById('play-again-btn').style.pointerEvents = "auto"
+
      }
 
      else if (gameBoardArray[1] !== "" && gameBoardArray[1] === gameBoardArray[4] && gameBoardArray[4] === gameBoardArray[7]){
       ui.disableClick()
-
+      currentPlayer = alternateXandO()
+      ui.disableReset()
+      document.getElementById('play-again-btn').style.pointerEvents = "auto"
      }
 
    }
