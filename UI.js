@@ -53,9 +53,14 @@ export const ui = (() => {
    return document.getElementById('play-again-btn').style.pointerEvents = "none"
   }
 
+  const clearBoardandArray = () => {
+    cells.forEach(cell => cell.textContent = "")
+    game_board.gameBoardCleared()
+  }
+
 
   const playGame = () => {
-      resetGameClicked()
+      clearBoardandArray()
       allowClicking()
 
 
@@ -63,6 +68,6 @@ export const ui = (() => {
 
   }
 
-  return {boardClick, displayXorO, disableClick, resetGame, playAgainBtn, resetGameClicked, disableReset, disablePlayAgainBtn}
+  return {boardClick, displayXorO, disableClick, resetGame, playAgainBtn, resetGameClicked, disableReset, disablePlayAgainBtn, clearBoardandArray}
 
 })();

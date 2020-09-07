@@ -10,12 +10,20 @@ export const game_flow = (() => {
     return currentPlayer === player2 ? currentPlayer = player1 : currentPlayer = player2
    }
 
+   const grabCurrentPlayer = () => {
+    return currentPlayer === player1 ? currentPlayer = player1 : currentPlayer = player2
+   }
+
+ let  x = currentPlayer
 
 
    const winnerOfGame = () => {
     let gameBoardArray = game_board.getBoard()
      if (gameBoardArray[0] !== "" && gameBoardArray[0] === gameBoardArray[1] && gameBoardArray[1] === gameBoardArray[2]){
        ui.disableClick()
+  
+
+
        currentPlayer = alternateXandO()
        ui.disableReset()
        document.getElementById('play-again-btn').style.pointerEvents = "auto"
@@ -81,6 +89,9 @@ export const game_flow = (() => {
     return winnerOfGame()
    }
 
-   return{alternateXandO, currentPlayer, getWinnerOfGame}
+
+
+ 
+   return{alternateXandO, currentPlayer, getWinnerOfGame, grabCurrentPlayer, x}
 
 })();
