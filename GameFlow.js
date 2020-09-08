@@ -6,6 +6,15 @@ export const game_flow = (() => {
 
   let currentPlayer = player1
 
+  const effectsOfWinningGame = () => {
+    ui.disableClick()
+    ui.recentWinner(currentPlayer)
+    ui.getWinner(currentPlayer)
+    currentPlayer = alternateXandO()
+    ui.disableReset()
+    document.getElementById('play-again-btn').style.pointerEvents = "auto"
+  }
+
  const alternateXandO = (previousWinner) => {
    console.log(previousWinner)
     if (previousWinner !== undefined) {
@@ -23,66 +32,36 @@ export const game_flow = (() => {
    const winnerOfGame = () => {
     let gameBoardArray = game_board.getBoard()
      if (gameBoardArray[0] !== "" && gameBoardArray[0] === gameBoardArray[1] && gameBoardArray[1] === gameBoardArray[2]){
-       ui.disableClick()
-       ui.recentWinner(currentPlayer)
-       ui.getWinner(currentPlayer)
-      currentPlayer = alternateXandO()
-       ui.disableReset()
-       document.getElementById('play-again-btn').style.pointerEvents = "auto"
+      effectsOfWinningGame()
+      
      }
 
      else if (gameBoardArray[0] !== "" && gameBoardArray[0] === gameBoardArray[3] && gameBoardArray[3] === gameBoardArray[6]){
-      ui.disableClick()
-      currentPlayer = alternateXandO()
-      ui.disableReset()
-      document.getElementById('play-again-btn').style.pointerEvents = "auto"
+      effectsOfWinningGame()
      }
 
      else if (gameBoardArray[6] !== "" && gameBoardArray[6] === gameBoardArray[7] && gameBoardArray[7] === gameBoardArray[8]){
-      ui.disableClick()
-      currentPlayer = alternateXandO()
-      ui.disableReset()
-      document.getElementById('play-again-btn').style.pointerEvents = "auto"
-
+      effectsOfWinningGame()
      }
 
      else if (gameBoardArray[2] !== "" && gameBoardArray[2] === gameBoardArray[5] && gameBoardArray[5] === gameBoardArray[8]){
-      ui.disableClick()
-      currentPlayer = alternateXandO()
-      ui.disableReset()
-      document.getElementById('play-again-btn').style.pointerEvents = "auto"
-
+      effectsOfWinningGame()
      }
 
      else if (gameBoardArray[0] !== "" && gameBoardArray[0] === gameBoardArray[4] && gameBoardArray[4] === gameBoardArray[8]){
-      ui.disableClick()
-      currentPlayer = alternateXandO()
-      ui.disableReset()
-      document.getElementById('play-again-btn').style.pointerEvents = "auto"
-
+      effectsOfWinningGame()
      }
 
      else if (gameBoardArray[2] !== "" && gameBoardArray[2] === gameBoardArray[4] && gameBoardArray[4] === gameBoardArray[6]){
-      ui.disableClick()
-      currentPlayer = alternateXandO()
-      ui.disableReset()
-      document.getElementById('play-again-btn').style.pointerEvents = "auto"
-
+      effectsOfWinningGame()
      }
 
      else if (gameBoardArray[3] !== "" && gameBoardArray[3] === gameBoardArray[4] && gameBoardArray[4] === gameBoardArray[5]){
-      ui.disableClick()
-      currentPlayer = alternateXandO()
-      ui.disableReset()
-      document.getElementById('play-again-btn').style.pointerEvents = "auto"
-
+      effectsOfWinningGame()
      }
 
      else if (gameBoardArray[1] !== "" && gameBoardArray[1] === gameBoardArray[4] && gameBoardArray[4] === gameBoardArray[7]){
-      ui.disableClick()
-      currentPlayer = alternateXandO()
-      ui.disableReset()
-      document.getElementById('play-again-btn').style.pointerEvents = "auto"
+      effectsOfWinningGame()
      }
 
    }
