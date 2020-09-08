@@ -26,8 +26,18 @@
   </div>
 </div>
 
+<form id='myForm' required>
+  <input type='text' class="name-space" id="name-space-1"  placeholder="Player 1 Enter Name" value="" autocomplete="off">
+  <button id="submit-button">Submit</button>
+
+  <input type='text' class="name-space"id='name-space-2'   placeholder="Player 2 Enter Name" value='' autocomplete="off">
+</form>
+
+
   <div id="board">
-    <h3 id="player-turn">Player ___ turn</h3>
+
+    <h3 id="player-turn"></h3>
+
     <div data-number = "0" class="cell left-side top"></div>
     <div data-number = "1" class="cell  top"></div>
     <div data-number = "2" class="cell right-side top"></div>
