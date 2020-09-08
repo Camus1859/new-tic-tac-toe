@@ -9,15 +9,18 @@ export const ui = (() => {
 
   const displayXorO = () => {
     cells.forEach(cell => cell.addEventListener('click', (e) =>{
-      cell.textContent !== "" ? cell.style.pointerEvents ="none" : 
-      e.target.textContent =  game_flow.grabCurrentPlayer().letter
-      const dataNumberClicked = e.target.getAttribute('data-number')
-      const valueOnSquare = e.target.textContent
-      game_board.matchArrayToBoard(dataNumberClicked, valueOnSquare)
-      document.getElementById('reset-btn').style.pointerEvents = "auto"
-      ui.disablePlayAgainBtn()
-      game_flow.getWinnerOfGame()
-      game_flow.alternateXandO()
+      if(cell.textContent !== ""){
+        cell.style.pointerEvents ="none"
+      }else{
+        e.target.textContent =  game_flow.grabCurrentPlayer().letter
+        const dataNumberClicked = e.target.getAttribute('data-number')
+        const valueOnSquare = e.target.textContent
+        game_board.matchArrayToBoard(dataNumberClicked, valueOnSquare)
+        document.getElementById('reset-btn').style.pointerEvents = "auto"
+        ui.disablePlayAgainBtn()
+        game_flow.getWinnerOfGame()
+        game_flow.alternateXandO()
+      }
    }))
  }
 
