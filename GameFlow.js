@@ -4,7 +4,7 @@ import {ui} from "/UI.js"
 
 export const game_flow = (() => {
 
-  let currentPlayer = player2
+  let currentPlayer = player1
 
  const alternateXandO = (previousWinner) => {
    console.log(previousWinner)
@@ -15,11 +15,10 @@ export const game_flow = (() => {
    }
   }
 
-   const grabCurrentPlayer = () => {
+
+  const grabCurrentPlayer = () => {
     return currentPlayer === player1 ? currentPlayer = player1 : currentPlayer = player2
    }
-
-
 
    const winnerOfGame = () => {
     let gameBoardArray = game_board.getBoard()
@@ -27,7 +26,7 @@ export const game_flow = (() => {
        ui.disableClick()
        ui.recentWinner(currentPlayer)
        ui.getWinner(currentPlayer)
-       currentPlayer = alternateXandO()
+      currentPlayer = alternateXandO()
        ui.disableReset()
        document.getElementById('play-again-btn').style.pointerEvents = "auto"
      }

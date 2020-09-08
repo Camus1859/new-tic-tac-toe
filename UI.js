@@ -7,20 +7,17 @@ export const ui = (() => {
 
   const cells = document.querySelectorAll('.cell')
 
-  const boardClick = () => {
-    cells.forEach(cell => cell.addEventListener('click', displayXorO))
-  }
-
   const displayXorO = () => {
     cells.forEach(cell => cell.addEventListener('click', (e) =>{
       cell.textContent !== "" ? cell.style.pointerEvents ="none" : 
-      e.target.textContent = game_flow.alternateXandO().letter
+      e.target.textContent =  game_flow.grabCurrentPlayer().letter
       const dataNumberClicked = e.target.getAttribute('data-number')
       const valueOnSquare = e.target.textContent
       game_board.matchArrayToBoard(dataNumberClicked, valueOnSquare)
       document.getElementById('reset-btn').style.pointerEvents = "auto"
       ui.disablePlayAgainBtn()
       game_flow.getWinnerOfGame()
+      game_flow.alternateXandO()
    }))
  }
 
@@ -87,6 +84,6 @@ export const ui = (() => {
 
 
 
-  return {boardClick, displayXorO, disableClick, resetGame, playAgainBtn, resetGameClicked, disableReset, disablePlayAgainBtn, clearBoardandArray, recentWinner, getWinner}
+  return {displayXorO, disableClick, resetGame, playAgainBtn, resetGameClicked, disableReset, disablePlayAgainBtn, clearBoardandArray, recentWinner, getWinner}
 
 })();
