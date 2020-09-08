@@ -1,5 +1,7 @@
 import {game_flow} from "/GameFlow.js";
 import {game_board} from  "/GameBoard.js"
+import {player1, player2 } from "/Player.js";
+
 
 export const ui = (() => {
 
@@ -35,10 +37,29 @@ export const ui = (() => {
     resetBtn.addEventListener('click', resetGameClicked)
   }
 
+  let arrayWithOneWinner = []
+  const recentWinner = (winner) => {
+   let reset = document.getElementById('reset-btn')
+   document.addEventListener('click', (e)=> {
+    if (e.target === reset ){
+      arrayWithOneWinner.push(winner)   
+     let previousWinner = arrayWithOneWinner.pop()
+      game_flow.alternateXandO(previousWinner)
+    }
+   })
+  }
+
   const resetGameClicked = () => {
     cells.forEach(cell => cell.textContent = "")
     game_board.gameBoardCleared()
+   let x = getWinner()
+   game_flow.alternateXandO(x)
   }
+
+  const getWinner = (justWon) => {
+    return justWon
+  }
+
 
   const playAgainBtn = () => {
     const playBtn = document.getElementById('play-again-btn')
@@ -62,12 +83,10 @@ export const ui = (() => {
   const playGame = () => {
       clearBoardandArray()
       allowClicking()
-
-
-
-
   }
 
-  return {boardClick, displayXorO, disableClick, resetGame, playAgainBtn, resetGameClicked, disableReset, disablePlayAgainBtn, clearBoardandArray}
+
+
+  return {boardClick, displayXorO, disableClick, resetGame, playAgainBtn, resetGameClicked, disableReset, disablePlayAgainBtn, clearBoardandArray, recentWinner, getWinner}
 
 })();

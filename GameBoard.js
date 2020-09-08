@@ -10,7 +10,6 @@ export const game_board = (() => {
 
   const matchArrayToBoard = (number, value) => {
      theBoard[number] = value
-     console.log(theBoard)
   }
 
   const getBoard = () => {
