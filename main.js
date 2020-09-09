@@ -5,5 +5,5 @@ import {game_board} from '/GameBoard.js'
 ui.displayXorO()
 ui.playAgainBtn()
 ui.resetGame()
-ui.disablePlayAgainBtn()
-ui.disableReset()
+game_flow.disablePlayAgainBtn()
+game_flow.disableReset()

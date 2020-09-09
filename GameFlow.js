@@ -5,14 +5,39 @@ import {ui} from "/UI.js"
 export const game_flow = (() => {
 
   let currentPlayer = player1
+  const cells = document.querySelectorAll('.cell')
+
+  let arrayWithOneWinner = []
+  const recentWinner = (winner) => {
+   let reset = document.getElementById('reset-btn')
+   document.addEventListener('click', (e)=> {
+    if (e.target === reset ){
+      arrayWithOneWinner.push(winner)   
+     let previousWinner = arrayWithOneWinner.pop()
+      game_flow.alternateXandO(previousWinner)
+    }
+   })
+  }
+
+  const disableClick = () => {
+    return cells.forEach(cell => cell.style.pointerEvents = "none")
+    }
+
+    const allowClicking = () => {
+      return cells.forEach(cell => cell.style.pointerEvents = "auto")
+      }
 
   const effectsOfWinningGame = () => {
-    ui.disableClick()
-    ui.recentWinner(currentPlayer)
-    ui.getWinner(currentPlayer)
+    disableClick()
+    recentWinner(currentPlayer)
+    getWinner(currentPlayer)
     currentPlayer = alternateXandO()
-    ui.disableReset()
+    disableReset()
     document.getElementById('play-again-btn').style.pointerEvents = "auto"
+  }
+
+  const getWinner = (justWon) => {
+    return justWon
   }
 
  const alternateXandO = (previousWinner) => {
@@ -70,9 +95,19 @@ export const game_flow = (() => {
     return winnerOfGame()
    }
 
+   const disableReset = () => {
+    return document.getElementById('reset-btn').style.pointerEvents = "none"
+  }
 
+  const disablePlayAgainBtn = () => {
+    return document.getElementById('play-again-btn').style.pointerEvents = "none"
+   }
 
+   const clearBoardandArray = () => {
+    cells.forEach(cell => cell.textContent = "")
+     game_board.gameBoardCleared()
+  }
  
-   return{alternateXandO, currentPlayer, getWinnerOfGame, grabCurrentPlayer}
+   return{alternateXandO, currentPlayer, getWinnerOfGame, grabCurrentPlayer, disableClick, allowClicking, getWinner, disableReset, disablePlayAgainBtn, clearBoardandArray}
 
 })();

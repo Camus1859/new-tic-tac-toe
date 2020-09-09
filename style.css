@@ -155,5 +155,17 @@ body{
   outline: none;
   text-decoration: none;
   border: none;
+}
 
+#center-Players-Turn{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 4rem;
+  color: white;
+}
+
+#players-Turn, #turn{
+  font-weight: bolder;
+  font-size: 1.5rem;
 }

@@ -16,8 +16,6 @@ export const game_board = (() => {
     return theBoard
   }
 
-
-
   return{theBoard, matchArrayToBoard, gameBoardCleared, getBoard}
 
 })();

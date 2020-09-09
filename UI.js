@@ -1,11 +1,32 @@
 import {game_flow} from "/GameFlow.js";
 import {game_board} from  "/GameBoard.js"
-import {player1, player2 } from "/Player.js";
-
+import {player1, player2, Player } from "/Player.js";
 
 export const ui = (() => {
-
   const cells = document.querySelectorAll('.cell')
+  const form = document.querySelector('#myForm')
+  
+  const grabPlayerNames =(e) => {
+    let name1 = document.getElementById('name-space-1').value
+    let name2 = document.getElementById('name-space-2').value
+    if (name1 === "" || name2 === ""){
+      alert('Fill in both names!')
+    }
+    player1.name = name1
+    player2.name = name2
+
+    document.getElementById('myForm').style.display = "none"
+     e.preventDefault()
+    
+  }
+
+  document.getElementById('myForm').style.display = "none"
+
+
+  form.addEventListener('submit', grabPlayerNames)
+
+
+
 
   const displayXorO = () => {
     cells.forEach(cell => cell.addEventListener('click', (e) =>{
@@ -17,76 +38,36 @@ export const ui = (() => {
         const valueOnSquare = e.target.textContent
         game_board.matchArrayToBoard(dataNumberClicked, valueOnSquare)
         document.getElementById('reset-btn').style.pointerEvents = "auto"
-        ui.disablePlayAgainBtn()
+        game_flow.disablePlayAgainBtn()
         game_flow.getWinnerOfGame()
         game_flow.alternateXandO()
       }
    }))
  }
 
-  const disableClick = () => {
-  return cells.forEach(cell => cell.style.pointerEvents = "none")
-  }
-
-  const allowClicking = () => {
-  return cells.forEach(cell => cell.style.pointerEvents = "auto")
-  }
-
   const resetGame = () => {
     const resetBtn = document.getElementById('reset-btn')
     resetBtn.addEventListener('click', resetGameClicked)
   }
-
-  let arrayWithOneWinner = []
-  const recentWinner = (winner) => {
-   let reset = document.getElementById('reset-btn')
-   document.addEventListener('click', (e)=> {
-    if (e.target === reset ){
-      arrayWithOneWinner.push(winner)   
-     let previousWinner = arrayWithOneWinner.pop()
-      game_flow.alternateXandO(previousWinner)
-    }
-   })
-  }
-
-  const resetGameClicked = () => {
-    cells.forEach(cell => cell.textContent = "")
-    game_board.gameBoardCleared()
-   let x = getWinner()
-   game_flow.alternateXandO(x)
-  }
-
-  const getWinner = (justWon) => {
-    return justWon
-  }
-
 
   const playAgainBtn = () => {
     const playBtn = document.getElementById('play-again-btn')
     playBtn.addEventListener('click', playGame)
   }
 
-  const disableReset = () => {
-    return document.getElementById('reset-btn').style.pointerEvents = "none"
-  }
-
-  const disablePlayAgainBtn = () => {
-   return document.getElementById('play-again-btn').style.pointerEvents = "none"
-  }
-
-  const clearBoardandArray = () => {
+  const resetGameClicked = () => {
     cells.forEach(cell => cell.textContent = "")
     game_board.gameBoardCleared()
+   let x = game_flow.getWinner()
+   game_flow.alternateXandO(x)
   }
-
 
   const playGame = () => {
-      clearBoardandArray()
-      allowClicking()
+      game_flow.clearBoardandArray()
+      game_flow.allowClicking()
   }
 
 
-
-  return {displayXorO, disableClick, resetGame, playAgainBtn, resetGameClicked, disableReset, disablePlayAgainBtn, clearBoardandArray, recentWinner, getWinner}
+  return {displayXorO, resetGame, playAgainBtn, resetGameClicked, grabPlayerNames }
 
 })();
