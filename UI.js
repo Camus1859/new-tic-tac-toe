@@ -16,12 +16,14 @@ export const ui = (() => {
     player2.name = name2
 
     document.getElementById('myForm').style.display = "none"
-     e.preventDefault()
+    document.getElementById('center-Players-Turn').style.display = "grid"
+    document.getElementById('players-Turn').textContent = player1.name
     
+    e.preventDefault()
   }
+  
 
-  document.getElementById('myForm').style.display = "none"
-
+  document.getElementById('center-Players-Turn').style.display = "none"
 
   form.addEventListener('submit', grabPlayerNames)
 
