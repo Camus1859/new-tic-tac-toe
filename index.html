@@ -9,38 +9,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
+
   <h1 id="title">Tic Tac Toe</h1>
-<div id="score-boxes">
-  <div class="score" id="score-box1">PLAYER 1 WINS
-    <div class="num">0</div>
 
+  <div id="score-boxes">
+    <div class="score" id="score-box1">PLAYER 1 WINS
+      <div class="num">0</div>
+    </div>
+
+    <button class="btn" id="play-again-btn">PLAY AGAIN</button>
+    <button class="btn" id="reset-btn">RESET GAME</button>
+
+
+    <div class="score" id="score-box2">PLAYER 2 WINS
+      <div class="num">0</div>
+    </div>
   </div>
-  <button class="btn" id="play-again-btn">PLAY AGAIN</button>
-  <button class="btn" id="reset-btn">RESET GAME</button>
 
 
-  <div class="score" id="score-box2">PLAYER 2 WINS
-    <div class="num">0</div>
+  <div id="sectionForName">
+    <form id='myForm' required>
+      <input type='text' value="" class="name-space" id="name-space-1" name="name-space-1" placeholder="PLAYER 1 ENTER NAME"      autocomplete="off">
+        <input type="submit" id="submit-button" value="SUBMIT">
+      <input type='text' value="" class="name-space"id='name-space-2' name="name-space-2"   placeholder="PLAYER 2 ENTER NAME"  autocomplete="off">
+    </form>
+
+    <div id="center-Players-Turn">
+      <p id="turn"> <span id="players-Turn"></span> 's Turn</p>
+    </div>
   </div>
-</div>
-
-<form id='myForm' required>
-
-  <input type='text' value="" class="name-space" id="name-space-1" name="name-space-1" placeholder="PLAYER 1 ENTER NAME"  autocomplete="off">
-
-
-  <input type="submit" id="submit-button" value="SUBMIT">
-
-  <input type='text' value="" class="name-space"id='name-space-2' name="name-space-2"   placeholder="PLAYER 2 ENTER NAME"  autocomplete="off">
-
-</form>
-
-
-
-<div id="center-Players-Turn">
-  <p id="turn"> <span id="players-Turn"></span> 's Turn</p>
-</div>
 
   <div id="board">
     <div data-number = "0" class="cell left-side top"></div>
