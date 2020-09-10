@@ -20,13 +20,15 @@ export const ui = (() => {
 
     document.getElementById('myForm').style.display = "none"
     document.getElementById('center-Players-Turn').style.display = "grid"
-    document.getElementById('players-Turn').textContent = player1.name
+    document.getElementById('players-winner').style.display = "none"
+    document.getElementById('players-name').textContent = `${player1.name}'s Turn`
     e.preventDefault()
   }
   
   document.getElementById('center-Players-Turn').style.display = "none"
 
   form.addEventListener('submit', submitPlayerInfo)
+
   const displayXorO = () => {
     cells.forEach(cell => cell.addEventListener('click', (e) =>{
       if(cell.textContent !== ""){
@@ -67,11 +69,10 @@ export const ui = (() => {
    game_flow.alternateXandO(x)
    game_flow.alternatePlayersTurn()
   }
-  
 
   const playGame = () => {
       game_flow.clearBoardandArray()
-      game_flow.allowClicking()   
+      game_flow.allowClicking()
   }
 
 

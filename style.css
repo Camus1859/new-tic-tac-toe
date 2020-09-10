@@ -100,7 +100,6 @@ body{
   border: none;
   width: 85%;
   padding: 1rem 0;
-  height: 34px;
 }
 
 #board-background{
@@ -145,9 +144,24 @@ body{
 #center-Players-Turn{
   color: white;
   font-weight: bolder;
-  height: 65px;
   font-size: 1.5rem;
 }
+
+#players-name{
+  display: flex;
+  align-items: center;
+  height: 66px;
+}
+
+#players-winner{
+  display: flex;
+  align-items: center;
+  height: 66px;
+}
+
+
+
+
 
 
 
