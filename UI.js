@@ -66,13 +66,19 @@ export const ui = (() => {
     cells.forEach(cell => cell.textContent = "")
     game_board.gameBoardCleared()
    let x = game_flow.getWinner()
-   game_flow.alternateXandO(x)
+   game_flow.alternateXandO()
    game_flow.alternatePlayersTurn()
+   document.getElementById('reset-btn').style.pointerEvents = "none"
+
   }
 
   const playGame = () => {
       game_flow.clearBoardandArray()
       game_flow.allowClicking()
+      document.getElementById('players-winner').style.display = "none"
+      document.getElementById('players-name').style.display = "grid"
+      document.getElementById('players-name').textContent = `${currentPlayer.name}'s Turn`
+
   }
 
 
