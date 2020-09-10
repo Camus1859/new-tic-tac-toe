@@ -41,9 +41,6 @@ body{
   font-family: 'Damion', cursive;
 }
 
-/* #turn{
-  font-size: 27px;
-} */
 
 .top {
   border-top: none;
@@ -106,6 +103,8 @@ body{
   border: none;
   width: 85%;
   padding: 1rem 0;
+  height: 34px;
+
 
 }
 
@@ -126,7 +125,7 @@ body{
   text-align: center;
   padding: .5rem;
   font-weight: bolder;
-  font-size: .80rem;
+  font-size: 1rem;
 }
 
 .name-space:focus{
@@ -148,6 +147,8 @@ body{
 #center-Players-Turn{
   color: white;
   font-weight: bolder;
+  height: 65px;
+  font-size: 1.5rem;
 }
 
 
