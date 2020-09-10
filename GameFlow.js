@@ -31,6 +31,11 @@ export const game_flow = (() => {
     }
   }
 
+  const showWinner = (displayWinner) => {
+    console.log('show winner reached')
+    return document.getElementById('turn').textContent = `${displayWinner.name} WINNER` 
+  }
+
   const disableClick = () => {
     return cells.forEach(cell => cell.style.pointerEvents = "none")
     }
@@ -44,6 +49,7 @@ export const game_flow = (() => {
     recentWinner(currentPlayer)
     getWinner(currentPlayer)
     updatGameScore(currentPlayer)
+    showWinner(currentPlayer)
     currentPlayer = alternateXandO()
     disableReset()
     document.getElementById('play-again-btn').style.pointerEvents = "auto"
@@ -54,7 +60,7 @@ export const game_flow = (() => {
   }
 
   const alternatePlayersTurn = () => {
-    return document.getElementById('players-Turn').textContent = currentPlayer.name
+      return document.getElementById('players-Turn').textContent = currentPlayer.name
   }
 
  const alternateXandO = (previousWinner) => {

@@ -27,7 +27,6 @@ export const ui = (() => {
   document.getElementById('center-Players-Turn').style.display = "none"
 
   form.addEventListener('submit', submitPlayerInfo)
-
   const displayXorO = () => {
     cells.forEach(cell => cell.addEventListener('click', (e) =>{
       if(cell.textContent !== ""){
@@ -68,10 +67,11 @@ export const ui = (() => {
    game_flow.alternateXandO(x)
    game_flow.alternatePlayersTurn()
   }
+  
 
   const playGame = () => {
       game_flow.clearBoardandArray()
-      game_flow.allowClicking()
+      game_flow.allowClicking()   
   }
 
 
