@@ -19,6 +19,18 @@ export const game_flow = (() => {
    })
   }
 
+
+  const updatGameScore = (winner) => {
+    if (winner.letter ===  "X"){
+      player1.score =  player1.score + 1
+      document.getElementById('player1-score').textContent = player1.score
+    }
+    else if(winner.letter === "O"){
+      player2.score =  player2.score + 1
+      document.getElementById('player2-score').textContent = player2.score
+    }
+  }
+
   const disableClick = () => {
     return cells.forEach(cell => cell.style.pointerEvents = "none")
     }
@@ -31,6 +43,7 @@ export const game_flow = (() => {
     disableClick()
     recentWinner(currentPlayer)
     getWinner(currentPlayer)
+    updatGameScore(currentPlayer)
     currentPlayer = alternateXandO()
     disableReset()
     document.getElementById('play-again-btn').style.pointerEvents = "auto"

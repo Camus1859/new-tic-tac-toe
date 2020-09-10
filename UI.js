@@ -5,12 +5,15 @@ import {player1, player2, Player } from "/Player.js";
 export const ui = (() => {
   const cells = document.querySelectorAll('.cell')
   const form = document.querySelector('#myForm')
+  let name1 = document.getElementById('name-space-1').value
+  let name2 = document.getElementById('name-space-2').value
   
   const submitPlayerInfo =(e) => {
-    let name1 = document.getElementById('name-space-1').value
-    let name2 = document.getElementById('name-space-2').value
+    name1 = document.getElementById('name-space-1').value
+    name2 = document.getElementById('name-space-2').value
     if (name1 === "" || name2 === ""){
       alert('Fill in both names!')
+      return
     }
     player1.name = name1
     player2.name = name2
@@ -18,23 +21,23 @@ export const ui = (() => {
     document.getElementById('myForm').style.display = "none"
     document.getElementById('center-Players-Turn').style.display = "grid"
     document.getElementById('players-Turn').textContent = player1.name
-    
     e.preventDefault()
   }
   
-
   document.getElementById('center-Players-Turn').style.display = "none"
 
   form.addEventListener('submit', submitPlayerInfo)
-
-
-
 
   const displayXorO = () => {
     cells.forEach(cell => cell.addEventListener('click', (e) =>{
       if(cell.textContent !== ""){
         cell.style.pointerEvents ="none"
-      }else{
+      } else if(name1 === "" || name2 === ""){
+        alert("Enter player names to begin!")
+        return
+
+      }
+      else{
         e.target.textContent =  game_flow.grabCurrentPlayer().letter
         const dataNumberClicked = e.target.getAttribute('data-number')
         const valueOnSquare = e.target.textContent
