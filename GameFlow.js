@@ -40,8 +40,11 @@ export const game_flow = (() => {
     return justWon
   }
 
+  const alternatePlayersTurn = () => {
+    return document.getElementById('players-Turn').textContent = currentPlayer.name
+  }
+
  const alternateXandO = (previousWinner) => {
-   console.log(previousWinner)
     if (previousWinner !== undefined) {
     return  currentPlayer = previousWinner
     }else{
@@ -108,6 +111,6 @@ export const game_flow = (() => {
      game_board.gameBoardCleared()
   }
  
-   return{alternateXandO, currentPlayer, getWinnerOfGame, grabCurrentPlayer, disableClick, allowClicking, getWinner, disableReset, disablePlayAgainBtn, clearBoardandArray}
+   return{alternateXandO, currentPlayer, getWinnerOfGame, grabCurrentPlayer, disableClick, allowClicking, getWinner, disableReset, disablePlayAgainBtn, clearBoardandArray, alternatePlayersTurn}
 
 })();

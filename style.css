@@ -32,7 +32,6 @@ body{
   height: 4.5rem;
 }
 
-
 #player-turn{
   text-align: center;
   font-size: 2.5rem;
@@ -40,7 +39,6 @@ body{
   text-shadow: 5px 10px 18px rgb(22, 22, 22);
   font-family: 'Damion', cursive;
 }
-
 
 .top {
   border-top: none;
@@ -62,7 +60,7 @@ body{
   align-items: center;
   color: white;
   font-size: larger;
-  text-shadow: 5px 10px 18px rgb(185, 169, 169);
+  text-shadow: 5px 10px 18px rgb(132, 169, 170);
   text-align: center;
 }
 
@@ -71,7 +69,6 @@ body{
   justify-content: space-evenly;
   width: 50%;
   margin-bottom: 1rem;
-
 }
 
 .num{
@@ -88,7 +85,7 @@ body{
   border: none;
   padding: 1rem;
   border-radius: 15%;
-  box-shadow:  1px 5px 10px rgb(236, 233, 233);
+  box-shadow:  1px 5px 10px rgb(132, 169, 170);
 }
 
 .btn:hover {
@@ -104,15 +101,12 @@ body{
   width: 85%;
   padding: 1rem 0;
   height: 34px;
-
-
 }
 
 #board-background{
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   background-color: rgb(22, 145, 150);
   width: 50%;
   box-shadow:  5px 10px 18px rgb(236, 233, 233);
@@ -136,6 +130,10 @@ body{
 
 #submit-button:hover{
   background-color: rgb(106, 226, 228);
+}
+
+#submit-button{
+  font-weight: bolder;
 }
 
 #submit-button:focus{

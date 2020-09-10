@@ -6,7 +6,7 @@ export const ui = (() => {
   const cells = document.querySelectorAll('.cell')
   const form = document.querySelector('#myForm')
   
-  const grabPlayerNames =(e) => {
+  const submitPlayerInfo =(e) => {
     let name1 = document.getElementById('name-space-1').value
     let name2 = document.getElementById('name-space-2').value
     if (name1 === "" || name2 === ""){
@@ -25,7 +25,7 @@ export const ui = (() => {
 
   document.getElementById('center-Players-Turn').style.display = "none"
 
-  form.addEventListener('submit', grabPlayerNames)
+  form.addEventListener('submit', submitPlayerInfo)
 
 
 
@@ -43,6 +43,7 @@ export const ui = (() => {
         game_flow.disablePlayAgainBtn()
         game_flow.getWinnerOfGame()
         game_flow.alternateXandO()
+        game_flow.alternatePlayersTurn()
       }
    }))
  }
@@ -62,6 +63,7 @@ export const ui = (() => {
     game_board.gameBoardCleared()
    let x = game_flow.getWinner()
    game_flow.alternateXandO(x)
+   game_flow.alternatePlayersTurn()
   }
 
   const playGame = () => {
@@ -70,6 +72,6 @@ export const ui = (() => {
   }
 
 
-  return {displayXorO, resetGame, playAgainBtn, resetGameClicked, grabPlayerNames }
+  return {displayXorO, resetGame, playAgainBtn, resetGameClicked, submitPlayerInfo }
 
 })();
