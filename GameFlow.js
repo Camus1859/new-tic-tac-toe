@@ -1,6 +1,5 @@
 import {player1, player2 } from "/Player.js";
 import {game_board} from "/GameBoard.js"
-import {ui} from "/UI.js"
 
 export const game_flow = (() => {
 
@@ -57,11 +56,11 @@ export const game_flow = (() => {
   const displayWinner = (winner) => {
     document.getElementById('players-winner').style.display = "grid"
     document.getElementById('players-name').style.display = "none"
-    return document.getElementById('players-winner').textContent = `${winner.name} Winner`
+    return document.getElementById('players-winner').textContent = `${winner.name}'s The Winner`
   }
 
   const alternatePlayersTurn = () => {
-    return document.getElementById('players-name').textContent = `${currentPlayer.name}'s Turn`
+    return document.getElementById('players-name').textContent = `${grabCurrentPlayer().name}'s Turn`
   }
 
  const alternateXandO = (previousWinner) => {

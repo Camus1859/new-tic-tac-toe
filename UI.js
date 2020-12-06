@@ -36,18 +36,18 @@ export const ui = (() => {
       } else if(name1 === "" || name2 === ""){
         alert("Enter player names to begin!")
         return
-
       }
       else{
         e.target.textContent =  game_flow.grabCurrentPlayer().letter
+        let x = game_flow.grabCurrentPlayer().letter
         const dataNumberClicked = e.target.getAttribute('data-number')
         const valueOnSquare = e.target.textContent
         game_board.matchArrayToBoard(dataNumberClicked, valueOnSquare)
         document.getElementById('reset-btn').style.pointerEvents = "auto"
         game_flow.disablePlayAgainBtn()
         game_flow.getWinnerOfGame()
-        game_flow.alternateXandO()
-        game_flow.alternatePlayersTurn()
+        console.log(game_flow.alternateXandO())
+        console.log(game_flow.alternatePlayersTurn())
       }
    }))
  }
@@ -66,8 +66,10 @@ export const ui = (() => {
     cells.forEach(cell => cell.textContent = "")
     game_board.gameBoardCleared()
    let x = game_flow.getWinner()
-   game_flow.alternateXandO()
-   game_flow.alternatePlayersTurn()
+    console.log(x)
+   console.log(game_flow.alternateXandO(x))
+   console.log(game_flow.alternatePlayersTurn())
+   console.log(game_flow.grabCurrentPlayer())
    document.getElementById('reset-btn').style.pointerEvents = "none"
 
   }
@@ -77,11 +79,10 @@ export const ui = (() => {
       game_flow.allowClicking()
       document.getElementById('players-winner').style.display = "none"
       document.getElementById('players-name').style.display = "grid"
-      document.getElementById('players-name').textContent = `${currentPlayer.name}'s Turn`
-
   }
 
 
   return {displayXorO, resetGame, playAgainBtn, resetGameClicked, submitPlayerInfo }
 
 })();
+
