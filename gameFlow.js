@@ -1,5 +1,5 @@
-import {player1, player2 } from "/Player.js";
-import {game_board} from "/GameBoard.js"
+import {player1, player2 } from "./player.js";
+import {game_board} from "./gameBoard.js"
 
 export const game_flow = (() => {
 

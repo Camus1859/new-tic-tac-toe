@@ -1,6 +1,6 @@
-import {game_flow} from "/GameFlow.js";
-import {game_board} from  "/GameBoard.js"
-import {player1, player2, Player } from "/Player.js";
+import {game_flow} from "./gameFlow.js";
+import {game_board} from  "./gameBoard.js"
+import {player1, player2} from "./player.js";
 
 export const ui = (() => {
   const cells = document.querySelectorAll('.cell')

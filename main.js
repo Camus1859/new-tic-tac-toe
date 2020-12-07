@@ -1,5 +1,5 @@
-import {ui} from '/UI.js'
-import {game_flow} from '/GameFlow.js'
+import {ui} from './ui.js'
+import {game_flow} from './gameFlow.js'
 ui.displayXorO()
 ui.playAgainBtn()
 ui.resetGame()

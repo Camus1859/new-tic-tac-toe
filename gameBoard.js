@@ -1,4 +1,3 @@
-import { ui } from "/UI.js";
 
 export const game_board = (() => {
 
